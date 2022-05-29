@@ -34,30 +34,30 @@ def getItem():
         if(item_name == "coke"):
             cost = int(quantity) * 25
             if(int(amt) == cost):
-                return jsonify({"Response":"Coke"})
+                return jsonify({"Your Choice":"Coke",  "Quantity": quantity})
             elif(amt>cost):
                 blance = int(amt)-cost
-                return jsonify({"Your Choice":"Coke", "Your Blance": blance})
+                return jsonify({"Your Choice":"Coke",  "Quantity": quantity, "Your Blance": blance})
             else:
-                return jsonify({"message":"Insufficent Amount", "Take Back your money":amt})
+                return jsonify({"message":"Insufficient Amount", "Take Back your money":amt})
         elif(item_name == "chips"):
             cost = int(quantity) * 20
             if(int(amt) == cost):
-                return jsonify({"Response":"Chips"})
+                return jsonify({"Your Choice":"Chips", "Quantity": quantity})
             elif(amt>cost):
                 blance = int(amt)-cost
-                return jsonify({"Your Choice":"Chips", "Your Blance": blance})
+                return jsonify({"Your Choice":"Chips", "Quantity": quantity, "Your Blance": blance})
             else:
-                return jsonify({"message":"Insufficent Amount", "Take Back your money":amt})
+                return jsonify({"message":"Insufficient Amount", "Take Back your money":amt})
 
         elif(item_name == "chocolate"):
             cost = int(quantity) * 5
             if(int(amt) == cost):
-                return jsonify({"Response":"Chocolate"})
+                return jsonify({"Your Choice":"Chocolate",  "Quantity": quantity})
             elif(amt>cost):
                 blance = int(amt)-cost
-                return jsonify({"Response":"Chocolate", "Your Blance": blance})
+                return jsonify({"Your Choice":"Chocolate", "Quantity": quantity, "Your Blance": blance})
             else:
-                return jsonify({"message":"Insufficent Amount", "Take Back your money":amt})
+                return jsonify({"message":"Insufficient Amount", "Take Back your money":amt})
     else:
         return jsonify({"This item is not available":item_name, "Take Back your money":amt})
